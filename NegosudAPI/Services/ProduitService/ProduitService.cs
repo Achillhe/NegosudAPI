@@ -47,13 +47,12 @@
             if (produit is null)
                 return null;
 
-            produit.nom_de_domaine = request.nom_de_domaine;
-            produit.type = request.type;
-            produit.reference = request.reference;
-            produit.quantite = request.quantite;
-            produit.prix = request.prix;
-            produit.volume = request.volume;
-            produit.millesime = request.millesime;
+            produit.NomDomaine = request.NomDomaine;
+            produit.Reference = request.Reference;
+            produit.Quantite = request.Quantite;
+            produit.Prix = request.Prix;
+            produit.Volume = request.Volume;
+            produit.Millesime = request.Millesime;
 
             await _context.SaveChangesAsync();
 

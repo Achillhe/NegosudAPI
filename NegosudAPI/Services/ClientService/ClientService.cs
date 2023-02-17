@@ -48,11 +48,11 @@
             if (client is null)
                 return null;
 
-            client.nom = request.nom;
-            client.prenom = request.prenom;
-            client.tel = request.tel;
-            client.email = request.email;
-            client.password = request.password;
+            client.Nom = request.Nom;
+            client.Prenom = request.Prenom;
+            client.Tel = request.Tel;
+            client.Email = request.Email;
+            client.Adresse = request.Adresse;
 
             await _context.SaveChangesAsync();
 

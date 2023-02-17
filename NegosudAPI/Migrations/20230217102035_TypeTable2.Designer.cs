@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NegosudAPI.Data;
 
@@ -10,9 +11,11 @@ using NegosudAPI.Data;
 namespace NegosudAPI.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20230217102035_TypeTable2")]
+    partial class TypeTable2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -129,6 +132,9 @@ namespace NegosudAPI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("TypeId")
+                        .HasColumnType("int");
+
                     b.Property<int>("millesime")
                         .HasColumnType("int");
 
@@ -143,9 +149,6 @@ namespace NegosudAPI.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("reference")
-                        .HasColumnType("int");
-
-                    b.Property<int>("typeId")
                         .HasColumnType("int");
 
                     b.Property<float>("volume")

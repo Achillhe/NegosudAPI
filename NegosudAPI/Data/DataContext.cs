@@ -19,5 +19,6 @@ namespace NegosudAPI.Data
         public DbSet<Produit> Produits { get; set; }
         public DbSet<Fournisseur> Fournisseurs { get; set; }
         public DbSet<Collaborateur> Collaborateurs { get; set; }
+        public DbSet<Models.Type> Types { get; set; }
     }
 }

@@ -4,7 +4,7 @@ using NegosudAPI.Services.ClientService;
 using NegosudAPI.Services.ProduitService;
 using NegosudAPI.Services.FournisseurService;
 using NegosudAPI.Services.CollaborateurService;
-
+using NegosudAPI.Services.TypeService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +16,7 @@ builder.Services.AddScoped<IClientService, ClientService>();
 builder.Services.AddScoped<ICollaborateurService, CollaborateurService>();
 builder.Services.AddScoped<IProduitService, ProduitService>();
 builder.Services.AddScoped<IFournisseurService, FournisseurService>();
+builder.Services.AddScoped<ITypeService, TypeService>();
 builder.Services.AddDbContext<DataContext>();
 
 var app = builder.Build();
@@ -32,5 +33,10 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseCors(x => x
+          .AllowAnyOrigin()
+          .AllowAnyMethod()
+          .AllowAnyHeader());
 
 app.Run();

@@ -4,17 +4,13 @@ namespace NegosudAPI.Models
 {
     public class Produit : Entity
     {
-        public string type { get; set; }
-        public string nom_de_domaine { get; set; }
-        public int reference { get; set; }
-        public int quantite { get; set; }
-        public float prix { get; set; }
-        public float volume { get; set; }
-        public int millesime { get; set; }
+        public string NomDomaine { get; set; }
+        public int Reference { get; set; }
+        public int Quantite { get; set; }
+        public float Prix { get; set; }
+        public float Volume { get; set; }
+        public int Millesime { get; set; }
 
-        public Produit() 
-        { 
-        }
-
+        public int TypeId { get; set; }
     }
 }

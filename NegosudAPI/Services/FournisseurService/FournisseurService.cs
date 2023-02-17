@@ -50,12 +50,12 @@ namespace NegosudAPI.Services.FournisseurService
             if (fournisseur is null)
                 return null;
 
-            fournisseur.nom = request.nom;
-            fournisseur.email = request.email;
-            fournisseur.code_postal = request.code_postal;
-            fournisseur.pays = request.pays;
-            fournisseur.tel = request.tel;
-            fournisseur.siret = request.siret;
+            fournisseur.Nom = request.Nom;
+            fournisseur.Email = request.Email;
+            fournisseur.CodePostal = request.CodePostal;
+            fournisseur.Pays = request.Pays;
+            fournisseur.Tel = request.Tel;
+            fournisseur.Siret = request.Siret;
 
             await _context.SaveChangesAsync();
 

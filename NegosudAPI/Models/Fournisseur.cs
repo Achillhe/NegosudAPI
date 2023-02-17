@@ -4,16 +4,11 @@ namespace NegosudAPI.Models
 {
     public class Fournisseur : Entity
     {
-        public string nom { get; set; }
-        public string email { get; set; }
-        public int code_postal { get; set; }
-        public string pays { get; set; }
-        public string tel { get; set; }
-        public int siret { get; set; }
-
-        public Fournisseur()
-        {
-        }
-
+        public string Nom { get; set; }
+        public string Email { get; set; }
+        public int CodePostal { get; set; }
+        public string Pays { get; set; }
+        public string Tel { get; set; }
+        public int Siret { get; set; }
     }
 }

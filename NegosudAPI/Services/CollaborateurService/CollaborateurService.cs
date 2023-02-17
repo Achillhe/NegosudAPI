@@ -50,11 +50,11 @@ namespace NegosudAPI.Services.CollaborateurService
             if (collaborateur is null)
                 return null;
 
-            collaborateur.nom = request.nom;
-            collaborateur.prenom = request.prenom;
-            collaborateur.email = request.email;
-            collaborateur.password = request.password;
-            collaborateur.role = request.role;
+            collaborateur.Nom = request.Nom;
+            collaborateur.Prenom = request.Prenom;
+            collaborateur.Email = request.Email;
+            collaborateur.Password = request.Password;
+            collaborateur.Role = request.Role;
 
             await _context.SaveChangesAsync();
 

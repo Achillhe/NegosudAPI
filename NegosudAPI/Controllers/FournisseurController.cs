@@ -22,7 +22,7 @@ namespace NegosudAPI.Controllers
         }
 
         [HttpGet("{Id}")]
-        public async Task<ActionResult<Fournisseur>> GetSingleProvidert(int Id)
+        public async Task<ActionResult<Fournisseur>> GetSingleProvider(int Id)
         {
             var result = await _fournisseurService.GetSingleProvider(Id);
             if (result is null)

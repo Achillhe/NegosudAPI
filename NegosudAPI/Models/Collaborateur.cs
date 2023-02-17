@@ -4,14 +4,10 @@ namespace NegosudAPI.Models
 {
     public class Collaborateur : Entity
     {
-        public string nom { get; set; }
-        public string prenom{ get; set; }
-        public string email { get; set; }
-        public string password { get; set; }
-        public int role { get; set; }
-
-        public Collaborateur()
-        {
-        }
+        public string Nom { get; set; }
+        public string Prenom{ get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
+        public int Role { get; set; }
     }
 }

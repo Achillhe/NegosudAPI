@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NegosudAPI.Data;
 
@@ -10,9 +11,11 @@ using NegosudAPI.Data;
 namespace NegosudAPI.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20230217094338_TableType")]
+    partial class TableType
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -145,8 +148,9 @@ namespace NegosudAPI.Migrations
                     b.Property<int>("reference")
                         .HasColumnType("int");
 
-                    b.Property<int>("typeId")
-                        .HasColumnType("int");
+                    b.Property<string>("type")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<float>("volume")
                         .HasColumnType("real");
@@ -154,23 +158,6 @@ namespace NegosudAPI.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Produits");
-                });
-
-            modelBuilder.Entity("NegosudAPI.Models.Type", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("type")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Types");
                 });
 #pragma warning restore 612, 618
         }
