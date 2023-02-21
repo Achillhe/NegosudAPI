@@ -10,7 +10,9 @@ namespace NegosudAPI.Models
         public float Prix { get; set; }
         public float Volume { get; set; }
         public int Millesime { get; set; }
+        public string Image { get; set; }
 
+        public Type Type { get; set; }
         public int TypeId { get; set; }
     }
 }

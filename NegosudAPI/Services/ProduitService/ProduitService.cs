@@ -53,6 +53,7 @@
             produit.Prix = request.Prix;
             produit.Volume = request.Volume;
             produit.Millesime = request.Millesime;
+            produit.Image = request.Image;
 
             await _context.SaveChangesAsync();
 

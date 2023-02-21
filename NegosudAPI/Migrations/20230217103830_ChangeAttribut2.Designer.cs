@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NegosudAPI.Data;
 
@@ -10,9 +11,11 @@ using NegosudAPI.Data;
 namespace NegosudAPI.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20230217103830_ChangeAttribut2")]
+    partial class ChangeAttribut2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,15 +32,11 @@ namespace NegosudAPI.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("ConfirmationMotDePasse")
+                    b.Property<string>("Adresse")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("MotDePasse")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -125,32 +124,6 @@ namespace NegosudAPI.Migrations
                     b.ToTable("Fournisseurs");
                 });
 
-            modelBuilder.Entity("NegosudAPI.Models.Panier", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("ClientId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProduitId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Quantite")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ClientId");
-
-                    b.HasIndex("ProduitId");
-
-                    b.ToTable("Panier");
-                });
-
             modelBuilder.Entity("NegosudAPI.Models.Produit", b =>
                 {
                     b.Property<int>("Id")
@@ -158,10 +131,6 @@ namespace NegosudAPI.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Image")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Millesime")
                         .HasColumnType("int");
@@ -207,25 +176,6 @@ namespace NegosudAPI.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Types");
-                });
-
-            modelBuilder.Entity("NegosudAPI.Models.Panier", b =>
-                {
-                    b.HasOne("NegosudAPI.Models.Client", "Client")
-                        .WithMany()
-                        .HasForeignKey("ClientId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("NegosudAPI.Models.Produit", "Produit")
-                        .WithMany()
-                        .HasForeignKey("ProduitId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Client");
-
-                    b.Navigation("Produit");
                 });
 
             modelBuilder.Entity("NegosudAPI.Models.Produit", b =>

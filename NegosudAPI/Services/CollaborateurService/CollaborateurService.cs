@@ -1,6 +1,4 @@
-﻿using NegosudAPI.Models;
-
-namespace NegosudAPI.Services.CollaborateurService
+﻿namespace NegosudAPI.Services.CollaborateurService
 {
     public class CollaborateurService : ICollaborateurService
     {

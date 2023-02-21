@@ -5,6 +5,7 @@ using NegosudAPI.Services.ProduitService;
 using NegosudAPI.Services.FournisseurService;
 using NegosudAPI.Services.CollaborateurService;
 using NegosudAPI.Services.TypeService;
+using NegosudAPI.Services.AuthentificationService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +18,7 @@ builder.Services.AddScoped<ICollaborateurService, CollaborateurService>();
 builder.Services.AddScoped<IProduitService, ProduitService>();
 builder.Services.AddScoped<IFournisseurService, FournisseurService>();
 builder.Services.AddScoped<ITypeService, TypeService>();
+builder.Services.AddScoped<IJwtAuthentificationService, JwtAuthentificationService>();
 builder.Services.AddDbContext<DataContext>();
 
 var app = builder.Build();

@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NegosudAPI.Data;
 
@@ -10,9 +11,11 @@ using NegosudAPI.Data;
 namespace NegosudAPI.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20230221090028_AddImage")]
+    partial class AddImage
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -46,10 +49,6 @@ namespace NegosudAPI.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Prenom")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Tel")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
