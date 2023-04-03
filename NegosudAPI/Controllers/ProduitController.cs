@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using NegosudAPI.Services.ClientService;
-using NegosudAPI.Services.ProduitService;
+﻿using BusinessLayer.Services.ProduitService;
+using DataAccessLayer.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace NegosudAPI.Controllers
 {

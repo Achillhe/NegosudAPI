@@ -1,6 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using NegosudAPI.Services.ClientService;
-using NegosudAPI.Services.CollaborateurService;
+﻿using BusinessLayer.Services.CollaborateurService;
+using DataAccessLayer.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace NegosudAPI.Controllers
 {

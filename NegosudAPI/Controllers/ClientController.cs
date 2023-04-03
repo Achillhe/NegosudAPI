@@ -1,9 +1,6 @@
-﻿using Azure.Core;
-using Microsoft.AspNetCore.Http;
+﻿using BusinessLayer.Services.ClientService;
+using DataAccessLayer.Models;
 using Microsoft.AspNetCore.Mvc;
-using NegosudAPI.Models;
-using NegosudAPI.Services.ClientService;
-using NuGet.Protocol.Plugins;
 
 namespace NegosudAPI.Controllers
 {
@@ -13,7 +10,7 @@ namespace NegosudAPI.Controllers
     {
         private readonly IClientService _clientService;
 
-        public ClientController(IClientService clientService) 
+        public ClientController(IClientService clientService)
         {
             _clientService = clientService;
         }
@@ -35,7 +32,7 @@ namespace NegosudAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<List<Client>>> AddClient([FromBody]Client client)
+        public async Task<ActionResult<List<Client>>> AddClient([FromBody] Client client)
         {
             var result = await _clientService.AddClient(client);
             return Ok(result);
@@ -55,7 +52,7 @@ namespace NegosudAPI.Controllers
         public async Task<ActionResult<List<Client>>> DeleteClient(int Id)
         {
             var result = await _clientService.DeleteClient(Id);
-            if(result is null)
+            if (result is null)
                 return NotFound("Client non trouvé.");
 
             return Ok(result);

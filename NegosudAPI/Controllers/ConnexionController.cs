@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DataAccessLayer.Models;
+using Microsoft.AspNetCore.Mvc;
 using NegosudAPI.Services.AuthentificationService;
 using System.Security.Claims;
 
